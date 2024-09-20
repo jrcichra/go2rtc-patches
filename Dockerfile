@@ -7,4 +7,4 @@ RUN git apply /patches/*.patch
 RUN CGO_ENABLED=0 go build -v -o go2rtc
 
 FROM ghcr.io/alexxit/go2rtc:1.9.4
-COPY --from=builder /app/go2rtc /usr/local/bin/go2rtc
+COPY --from=builder /app/go2rtc /usr/local/bin/
