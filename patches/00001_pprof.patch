@@ -1,0 +1,25 @@
+From 634767814e377058ed9b620236d9453bc3442674 Mon Sep 17 00:00:00 2001
+From: Justin Cichra <1342149+jrcichra@users.noreply.github.com>
+Date: Fri, 20 Sep 2024 08:10:01 -0400
+Subject: [PATCH] feat(api): add pprof endpoint
+
+This will help debug running go2rtc instances.
+
+Since the default http handler is used for the api, it is automatically registered.
+---
+ internal/api/api.go | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/internal/api/api.go b/internal/api/api.go
+index 86817bd0..4c3d5e7f 100644
+--- a/internal/api/api.go
++++ b/internal/api/api.go
+@@ -13,6 +13,8 @@ import (
+ 	"syscall"
+ 	"time"
+ 
++	_ "net/http/pprof"
++
+ 	"github.com/AlexxIT/go2rtc/internal/app"
+ 	"github.com/rs/zerolog"
+ )
