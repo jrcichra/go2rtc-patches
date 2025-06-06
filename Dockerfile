@@ -1,4 +1,4 @@
-FROM golang:1.24.3-bookworm as builder
+FROM golang:1.24.4-bookworm as builder
 WORKDIR /app
 RUN git clone --branch=v1.9.7 https://github.com/AlexxIT/go2rtc.git
 WORKDIR /app/go2rtc
